@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom';
-const SideBar = ({hideOrNot}) => {
+const SideBar = () => {
 
     const [genreList, setGenreList] = useState([]);
     const getAnimeGenre = ()=>{
@@ -17,7 +17,7 @@ const SideBar = ({hideOrNot}) => {
         getAnimeGenre();
     },[]);
   return (
-    <section className={`${hideOrNot} sticky left-0 top-8 py-4 flex flex-col h-screen overflow-y-auto shrink border-r p-6 lg:w-[266px]`}>
+    <section className={"hidden lg:flex sticky left-0 top-8 py-4 flex-col h-screen overflow-y-auto shrink border-r border-accent p-6 lg:w-[266px]"}>
       {genreList.map((genre)=>{
         return(
             <NavLink className={({isActive})=>

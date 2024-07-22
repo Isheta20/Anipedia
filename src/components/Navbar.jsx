@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SideBar from "./SideBar";
+import GenreModal from "./GenreModal";
 
 const Navbar = () => {
   return (
@@ -24,7 +24,7 @@ const Navbar = () => {
               </button>
             </form>
             <h3 className="font-bold text-lg">Genres</h3>
-            <div className="py-4"><SideBar className="block lg:hidden"/></div>
+            <div className="py-4"><GenreModal/></div>
           </div>
         </dialog>
 

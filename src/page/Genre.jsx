@@ -12,7 +12,7 @@ const Genre = () => {
   const getAnimeByGenre = () => {
     setIsLoading(true);
     axios
-      .get(`https://api.jikan.moe/v4/anime?genres=${id}`)
+      .get(`https://api.jikan.moe/v4/anime?genres=${id} `)
       .then((response) => {
         setAnimeList(response.data.data);
         console.log(response.data.data, "anime by genre");

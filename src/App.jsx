@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Navbar/>
       <div className="flex bg-slate-800  text-white ">
-        <SideBar className="hidden lg:block"/>
+        <SideBar/>
         <div className="mx-auto w-full max-w-5xl">
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
