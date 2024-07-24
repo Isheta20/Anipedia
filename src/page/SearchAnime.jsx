@@ -31,7 +31,7 @@ const SearchAnime = () => {
 
   return (
     <>
-      <div className="text-center mt-10 ">
+      <div className="text-center mt-10 pb-10">
         <h1 className="text-3xl font-semibold">Search Anime</h1>
         <form className="pt-2" onSubmit={handleSearch}>
           <input

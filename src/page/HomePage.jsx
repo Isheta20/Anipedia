@@ -34,7 +34,7 @@ const HomePage = () => {
 
   console.log(animeList);
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 pb-10">
       {isLoading && <Loader />}
       <section className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  mt-4 gap-10">
         {animeList.map((anime) => {
@@ -42,7 +42,7 @@ const HomePage = () => {
         })}
       </section>
 
-      <div className="flex justify-center gap-4 mt-5">
+      <div className="flex justify-center gap-4 mt-6">
         <button
           onClick={handlePrevPage}
           disabled = {currentPage == totalPage}

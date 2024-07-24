@@ -7,6 +7,7 @@ import axios from "axios";
 import Loader from "../components/Loader";
 import ReactPlayer from "react-player";
 
+
 const AnimeDetails = () => {
     const {id} = useParams();
     const [anime, setAnime] = useState([])
@@ -29,7 +30,7 @@ const AnimeDetails = () => {
   return anime ? (
     <>
     {!anime && isLoading && <Loader/>}
-      <div className="max-w-4xl mx-auto p-6 flex flex-col md:flex-row">
+      <div className="max-w-4xl mx-auto p-6 flex flex-col md:flex-row pb-10">
         {/* Movie Poster */}
         <div className="md:w-1/3 mr-6 mb-4">
           <img

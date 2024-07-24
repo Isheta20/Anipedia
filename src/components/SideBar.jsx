@@ -17,7 +17,7 @@ const SideBar = () => {
         getAnimeGenre();
     },[]);
   return (
-    <section className={"hidden lg:flex sticky left-0 top-8 py-4 flex-col h-screen overflow-y-auto shrink border-r border-accent p-6 lg:w-[266px]"}>
+    <section className={"hidden lg:flex sticky left-0 top-8 py-4 pb-6 flex-col h-screen overflow-y-auto shrink border-r border-accent p-6 lg:w-[266px]"}>
       {genreList.map((genre)=>{
         return(
             <NavLink className={({isActive})=>

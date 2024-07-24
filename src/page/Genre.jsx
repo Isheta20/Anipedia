@@ -30,7 +30,7 @@ const Genre = () => {
   // if(isLoading) return <Loader/>
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 mt-8 pb-10">
       {isLoading && <Loader />}
       <div className="grid grid-cols-3 mt-4 gap-10 md:grid-cols-2 sm:grid-cols-1">
         {animeList.map((anime) => {

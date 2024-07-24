@@ -5,22 +5,24 @@ import Genre from "./page/Genre";
 import AnimeDetails from "./page/AnimeDetails";
 import Navbar from "./components/Navbar";
 import SearchAnime from "./page/SearchAnime";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar/>
-      <div className="flex bg-slate-800  text-white ">
-        <SideBar/>
+      <Navbar />
+      <div className="flex bg-slate-800  text-white">
+        <SideBar />
         <div className="mx-auto w-full max-w-5xl">
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
-            <Route path="/genre/:id" element={<Genre/>}></Route>
-            <Route path="/anime/:id" element={<AnimeDetails/>}></Route>
-            <Route path="/search" element={<SearchAnime/>}></Route>
+            <Route path="/genre/:id" element={<Genre />}></Route>
+            <Route path="/anime/:id" element={<AnimeDetails />}></Route>
+            <Route path="/search" element={<SearchAnime />}></Route>
           </Routes>
         </div>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }
