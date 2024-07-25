@@ -9,7 +9,7 @@ import { FaSquareInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className='py-10 bg-gray-900 text-slate-300 mx-auto px-6 border-t-accent'>
+    <footer className='py-10 bg-gray-900 text-slate-300 mx-auto px-6 border-t border-accent'>
         <div id="footerBox" className='grid grid-cols-4'>
             <div className='pl-4'>
               <Link to={`/`} className=" text-xl">Anipedia</Link>

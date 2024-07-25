@@ -4,7 +4,7 @@ import GenreModal from "./GenreModal";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-slate-800  text-white flex mx-auto border-b border-accent h-24 sticky top-0 z-50">
+    <div className="navbar bg-gray-900  text-white flex mx-auto border-b border-accent h-24 sticky top-0 z-50">
       <div className="navbar-start">
 
 

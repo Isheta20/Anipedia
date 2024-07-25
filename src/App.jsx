@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div className="flex bg-slate-800  text-white">
+      <div className="flex bg-gray-900  text-white">
         <SideBar />
         <div className="mx-auto w-full max-w-5xl">
           <Routes>
