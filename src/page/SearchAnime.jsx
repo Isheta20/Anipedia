@@ -6,13 +6,14 @@ import AnimeCard from "../components/AnimeCard";
 const SearchAnime = () => {
   const [animeList, setAnimeList] = useState([]);
   const [query, setQuery] = useState([]);
-  const [isLoading, setIsLoading] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const getAnimeBySearch = () => {
     setIsLoading(true);
     axios
-      .get(`https://api.jikan.moe/v4/anime?q={query}`)
+      .get(`https://api.jikan.moe/v4/anime?q=${query}`)
       .then((response) => {
         setAnimeList(response.data.data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error, "error in search");
