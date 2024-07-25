@@ -39,7 +39,7 @@ const HomePage = () => {
       {isLoading && <Loader />}
       <section className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  mt-4 gap-10">
         {animeList.map((anime, i) => {
-          return <AnimeCard anime={anime} key={anime.mal_id} home = {`${i==0?'lg:col-span-3 md:col-span-2':''}`}/>;
+          return <AnimeCard anime={anime} key={anime.mal_id} hero = {`${i==0?'lg:col-span-3 md:col-span-2':''}`}/>;
         })}
       </section>
 

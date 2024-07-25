@@ -3,13 +3,13 @@ import episode from "../assets/episodes.svg";
 import star from "../assets/star.svg";
 import { useNavigate } from "react-router-dom";
 
-const AnimeCard = ({ anime, home }) => {
+const AnimeCard = ({ anime, hero }) => {
   // console.log(anime, "from the card"); //to chk if anime successfully passed as parameter
   
   const navigate = useNavigate();
   return (
     <>
-      <div onClick={()=>navigate(`/anime/${anime.mal_id}`)} className = {`${home} relative overflow-hidden rounded-lg shadow transition hover:shadow-lg`}>
+      <div onClick={()=>navigate(`/anime/${anime.mal_id}`)} className = {`${hero} relative overflow-hidden rounded-lg shadow transition hover:shadow-lg`}>
         <img
           alt="anime.title"
           src={anime.images.jpg.image_url}
