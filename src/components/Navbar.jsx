@@ -4,13 +4,13 @@ import GenreModal from "./GenreModal";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-gray-900  text-white flex mx-auto border-b border-accent h-24 sticky top-0 z-50">
+    <div className="navbar bg-base-100 text-white flex mx-auto border-accent border-b h-24 sticky top-0 z-50 opacity-90">
       <div className="navbar-start">
 
 
         {/* You can open the modal using document.getElementById('ID').showModal() method */}
         <button
-          className="btn lg:hidden text-slate-100 bg-slate-900 border-accent"
+          className="btn lg:hidden text-slate-100 bg-slate-900 border-accent border-2"
           onClick={() => document.getElementById("my_modal_3").showModal()}
         >
           &#9776;
@@ -28,7 +28,7 @@ const Navbar = () => {
           </div>
         </dialog>
 
-        <Link to={`/`} className="btn btn-ghost text-xl">Anipedia</Link>
+        <Link to={`/`} className="btn btn-ghost text-secondary/95 font-extrabold text-3xl">ANIPEDIA</Link>
       </div>
       {/* <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -47,7 +47,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </details>
-          </li>
+          </li>ul
           <li>
             <a>Item 3</a>
           </li>
@@ -56,7 +56,7 @@ const Navbar = () => {
       <div className="navbar-end">
         <Link
           to="/search"
-          className="btn bg-slate-900 text-slate-100 border-accent"
+          className="btn btn-accent bg-slate-900 text-slate-100 border-accent border-2"
         >
           Search Anime
         </Link>

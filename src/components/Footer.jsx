@@ -12,18 +12,14 @@ const Footer = () => {
     <footer className='py-10 bg-gray-900 text-slate-300 mx-auto px-6 border-t border-accent'>
         <div id="footerBox" className='grid grid-cols-4'>
             <div className='pl-4'>
-              <Link to={`/`} className=" text-xl">Anipedia</Link>
-              <div id="copyright">© 2024 All rights Reserved by Anipedia</div>
+              <Link to={`/`} className=" text-xl text-secondary font-semibold">Anipedia</Link>
+              <div id="copyright" className='font-light text-xs py-2'>© 2024 All rights Reserved by Anipedia</div>
             </div>
-            <div className="socials flex gap-2 justify-center">
-                <Link to="#"><FaFacebookSquare size={42}/></Link>
-                <Link to="#"><FaSquareInstagram size={42}/></Link>
-                <Link to="#"><FaSquareXTwitter size={42}/></Link> 
-            </div>
+            
             <div className="linksfooter flex flex-col items-center gap-2">
                 <div className='flex flex-col gap-2'>
                   
-                  <Link to={`/`}>Animpedia - Home</Link>
+                  <Link to={`/`}>Anipedia - Home</Link>
                   <Link to="#">About Us</Link>
                   <Link to="#">Contact</Link>
                 </div>
@@ -36,6 +32,11 @@ const Footer = () => {
                   <Link to="#">Terms of Use</Link>
                   <Link to="#">Help</Link>
                 </div>
+            </div>
+            <div className="socials flex gap-2 justify-center">
+                <Link to="#"><FaFacebookSquare size={42}/></Link>
+                <Link to="#"><FaSquareInstagram size={42}/></Link>
+                <Link to="#"><FaSquareXTwitter size={42}/></Link> 
             </div>
         </div>
     </footer>

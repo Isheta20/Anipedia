@@ -22,7 +22,7 @@ const GenreModal = () => {
       {genreList.map((genre) => {
         return (
           <NavLink className={({isActive})=>
-            isActive? "block px-4 text-gray-800 rounded-lg bg-gray-50" : "block px-4 rounded-lg text-gray-50"
+            isActive? "block px-4 text-info-content rounded-lg bg-gray-50 bg-info py-2" : "block px-4 rounded-lg text-gray-50 py-2"
           } key={genre.name} to={`/genre/${genre.mal_id}`}>
               {genre.name}
           </NavLink> 
