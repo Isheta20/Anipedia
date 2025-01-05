@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import Loader from "../components/Loader";
 import AnimeCard from "../components/AnimeCard";
+import SearchImg from "../assets/searchimg.png";
 
 const SearchAnime = () => {
   const [animeList, setAnimeList] = useState([]);
@@ -60,7 +61,7 @@ const SearchAnime = () => {
               })
             ) : (
               <img
-                src="../src/assets/searchimg.png"
+                src={SearchImg}
                 alt="search"
                 className="lg:col-span-3 md:col-span-2 justify-self-center mt-32"
                 width={400}
