@@ -7,32 +7,35 @@ import axios from "axios";
 import Loader from "../components/Loader";
 import ReactPlayer from "react-player";
 
-
 const AnimeDetails = () => {
-    const {id} = useParams();
-    const [anime, setAnime] = useState([])
-    const [isLoading,setIsLoading] = useState(false);
-    const getAnimeById=()=>{
-        setIsLoading(true);
-        axios.get(`https://api.jikan.moe/v4/anime/${id}`).then((response)=>{
-            setAnime(response.data.data);
-            console.log(response.data.data)//chk data coming or not
-        }).catch((error)=>{
-            console.log(error);
-        }).finally(()=>{
-            setIsLoading(false);
-        })
-    }
+  const { id } = useParams();
+  const [anime, setAnime] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const getAnimeById = () => {
+    setIsLoading(true);
+    axios
+      .get(`https://api.jikan.moe/v4/anime/${id}`)
+      .then((response) => {
+        setAnime(response.data.data);
+        console.log(response.data.data); //chk data coming or not
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
 
-    useEffect(()=>{
-        getAnimeById();
-    }, [id]);
+  useEffect(() => {
+    getAnimeById();
+  }, [id]);
   return anime ? (
     <>
-    {!anime && isLoading && <Loader/>}
-      <div className="max-w-4xl mx-auto p-6 pl-0 flex flex-col md:flex-row pb-10 mt-4">
+      {!anime && isLoading && <Loader />}
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row pb-4 mt-8 gap-8 justify-center items-center md:items-start md:justify-start">
         {/* Movie Poster */}
-        <div className="md:w-1/3 mr-6 mb-4">
+        <div className="md:w-1/3 mb-4 md:p-0 p-2">
           <img
             src={anime.images?.jpg.large_image_url}
             alt="poster"
@@ -40,9 +43,13 @@ const AnimeDetails = () => {
           />
         </div>
         {/* Movie Details */}
-        <div className="w-2/3">
-          <h1 className="text-4xl font-bold">{anime.title}</h1>
-          <p className="text-xl my-2">{anime.year} - {anime.season}</p>
+        <div className="w-2/3 flex flex-col justify-center items-center md:items-start md:justify-start">
+          <h1 className="text-4xl font-bold text-accent text-center md:text-left">
+            {anime.title}
+          </h1>
+          <p className="text-xl my-2">
+            {anime.year} - {anime.season}
+          </p>
           <div className="flex items-center my-auto">
             <img src={star} alt="star" className="w-5 h-5 my-auto" />
             <span className="ml-2  text-yellow-400 my-auto font-semibold">
@@ -53,14 +60,20 @@ const AnimeDetails = () => {
           <div className="flex items-center my-2 gap-2">
             <img src={episodes} alt="episodes" className="w-5 h-5" />
 
-            <p className="text-gray-400">{anime.episodes} episodes - {anime.duration}</p>
+            <p className="text-gray-400">
+              {anime.episodes} episodes - {anime.duration}
+            </p>
           </div>
           <div className="flex space-x-3 my-2">
-            {anime.genres?.map((genre)=>{
-                return (
-
-                    <p className="bg-gray-700 text-gray-300 px-3 py-1 rounded">{genre.name}</p>
-                );
+            {anime.genres?.map((genre) => {
+              return (
+                <p
+                  key={genre.mal_id}
+                  className="bg-gray-700 text-gray-300 px-3 py-1 rounded"
+                >
+                  {genre.name}
+                </p>
+              );
             })}
           </div>
           <div className="bg-gray-700 text-gray-300 px-3 py-1 rounded w-max">
@@ -76,7 +89,7 @@ const AnimeDetails = () => {
             </button>
             <dialog id="my_modal_2" className="modal ">
               <div className="modal-box  flex justify-center w-11/12 max-w-3xl">
-              <ReactPlayer url={anime.trailer?.url}/>
+                <ReactPlayer url={anime.trailer?.url} />
               </div>
               <form method="dialog" className="modal-backdrop">
                 <button>close</button>
@@ -85,17 +98,14 @@ const AnimeDetails = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-4xl mb-4">
-        <h2 className="text-2xl font-semibold mb-2">Overview</h2>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, ipsum
-          laborum doloribus, omnis repudiandae quaerat aliquid eligendi a quasi
-          accusamus quidem distinctio quo perferendis. Non consequuntur
-          obcaecati harum debitis quam.
-        </p>
+      <div className="mx-auto max-w-4xl mb-8 md:text-justify text-center">
+        <h2 className="text-2xl font-semibold mb-2 text-accent ">Overview</h2>
+        <p className="md:p-0 p-4">{anime.synopsis}</p>
       </div>
     </>
-  ) : (<Loader/>);
+  ) : (
+    <Loader />
+  );
 };
 
 export default AnimeDetails;

@@ -17,7 +17,6 @@ const Genre = () => {
       .get(`https://api.jikan.moe/v4/anime?genres=${id}&page=${currentPage}`)
       .then((response) => {
         setAnimeList(response.data.data);
-        console.log(response.data.data, "anime by genre");
         setIsLoading(false);
       })
       .catch((error) => {
@@ -45,22 +44,26 @@ const Genre = () => {
       {isLoading && <Loader />}
       <div className="grid lg:grid-cols-3 mt-4 gap-10 md:grid-cols-2 grid-cols-1">
         {animeList.map((anime, i) => {
-          return <AnimeCard key={anime.mal_id} anime={anime} hero = {`${i==0?'lg:col-span-3 md:col-span-2':''}`}/>;
+          return (
+            <AnimeCard
+              key={anime.mal_id}
+              anime={anime}
+              hero={`${i == 0 ? "lg:col-span-3 md:col-span-2" : ""}`}
+            />
+          );
         })}
       </div>
 
       <div className="flex justify-center gap-4 mt-6">
         <button
           onClick={handlePrevPage}
-          disabled = {currentPage == firstPage}
+          disabled={currentPage == firstPage}
           className=" btn btn-outline btn-accent"
         >
           &#60;
         </button>
 
-        <div className="self-center text-accent text-lg">
-            {currentPage}
-        </div>
+        <div className="self-center text-accent text-lg">{currentPage}</div>
         <button
           onClick={handleNextPage}
           className=" btn btn-outline btn-accent"
