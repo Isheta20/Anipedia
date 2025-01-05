@@ -16,9 +16,9 @@ function App() {
         <div className="mx-auto w-full max-w-5xl">
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
-            <Route path="/genre/:id" element={<Genre />}></Route>
-            <Route path="/anime/:id" element={<AnimeDetails />}></Route>
-            <Route path="/search" element={<SearchAnime />}></Route>
+            <Route path="genre/:id" element={<Genre />}></Route>
+            <Route path="anime/:id" element={<AnimeDetails />}></Route>
+            <Route path="search" element={<SearchAnime />}></Route>
           </Routes>
         </div>
       </div>
