@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import AnimeCard from "../components/AnimeCard";
 import Loader from "../components/Loader";
+import Seo from "../components/Seo";
 
 const HomePage = () => {
   const [animeList, setAnimeList] = useState([]);
@@ -37,6 +38,10 @@ const HomePage = () => {
 
   return (
     <div className="container mx-auto px-4 pb-10">
+      <Seo
+        title="Home Page"
+        description="Discover a world of captivating anime at our site. Explore the latest series, classic favorites, and exclusive content. From action-packed shonen to heartwarming slice-of-life, find your next anime obsession here."
+      />
       {isLoading && <Loader />}
       <section className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  mt-4 gap-10">
         {animeList.map((anime, i) => {
