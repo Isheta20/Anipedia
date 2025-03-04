@@ -6,10 +6,6 @@ const Seo = ({ title, description, name }) => {
   return (
     <Helmet>
       <title>{title}</title>
-      <meta
-        name="google-site-verification"
-        content="ScS9u8BYMHNclTiLcAwDYi34IEWJL5ouH7LghWCDLnk"
-      />
 
       {/* facebook tags */}
       <meta name="description" content={description} />
