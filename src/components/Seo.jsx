@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import logo from "../assets/Logo_tab.png";
+import logo from "../assets/Logo_tab_nobg_crop.png";
 
 const Seo = ({ title, description, name }) => {
   return (
